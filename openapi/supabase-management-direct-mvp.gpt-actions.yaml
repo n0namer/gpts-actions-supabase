@@ -184,8 +184,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/GenericRequest'
   /v1/projects/{ref}/database/query/read-only:
     post:
       operationId: runSupabaseReadOnlySqlQuery
