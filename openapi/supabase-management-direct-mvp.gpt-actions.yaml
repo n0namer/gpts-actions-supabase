@@ -173,7 +173,7 @@ paths:
           description: OK
       parameters:
       - name: ref
-        in : path
+        in: path
         required: true
         schema:
           type: string
