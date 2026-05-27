@@ -301,8 +301,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/MigrationRequest'
     patch:
       operationId: patchSupabaseDatabaseMigration
       summary: Patch database migration
