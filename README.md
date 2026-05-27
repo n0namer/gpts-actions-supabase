@@ -2,22 +2,26 @@
 
 This repository contains ChatGPT Actions compatible OpenAPI schemas for the official Supabase Management API.
 
-## Preferred schema: command router
+## Preferred fast schema: direct Supabase REST
 
-Use this schema for MCP-like GPT Actions with fewer than 30 paths:
-
-```text
-openapi/supabase-management-router.gpt-actions.yaml
-```
-
-This schema expects an adapter/bridge service. GPT Actions calls `observeSupabase` or `applySupabase`; the adapter maps `operation` enums to the official Supabase Management REST API.
-
-## Legacy direct subset schema
-
-Kept as reference only:
+Use this schema now for the fastest working GPT Actions setup. It calls the official Supabase Management REST API directly, without an adapter:
 
 ```text
 openapi/supabase-management.gpt-actions.yaml
+```
+
+Server:
+
+```text
+https://api.supabase.com
+```
+
+## Future schema: command router
+
+Kept as a later MCP-like adapter design, not the current fast path:
+
+```text
+openapi/supabase-management-router.gpt-actions.yaml
 ```
 
 Server:
