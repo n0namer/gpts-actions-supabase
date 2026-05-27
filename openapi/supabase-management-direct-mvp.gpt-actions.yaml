@@ -225,8 +225,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/SqlRequest'
   /v1/projects/{ref}/database/migrations:
     get:
       operationId: listSupabaseDatabaseMigrations
