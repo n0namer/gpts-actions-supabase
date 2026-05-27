@@ -537,3 +537,95 @@ components:
       type: http
       scheme: bearer
       bearerFormat: SUPABASE_PAT_OR_OAUTH_ACCESS_TOKEN
+  schemas:
+    GenericRequest:
+      type: object
+      properties:
+        payload:
+          type: object
+          properties: {}
+          additionalProperties: true
+        name:
+          type: string
+        value:
+          type: string
+        enabled:
+          type: boolean
+      additionalProperties: true
+    SqlRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: SQL query to execute.
+      required:
+        - query
+      additionalProperties: true
+    ProjectCreateRequest:
+      type: object
+      properties:
+        organization_id:
+          type: string
+        name:
+          type: string
+        region:
+          type: string
+        db_pass:
+          type: string
+          description: Never print this value.
+        plan:
+          type: string
+      required:
+        - organization_id
+        - name
+        - region
+        - db_pass
+      additionalProperties: true
+    MigrationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        query:
+          type: string
+      required:
+        - query
+      additionalProperties: true
+    SecretsUpsertRequest:
+      type: object
+      properties:
+        secrets:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+                description: Never print this value.
+            required:
+              - name
+              - value
+            additionalProperties: true
+      additionalProperties: true
+    SecretsDeleteRequest:
+      type: object
+      properties:
+        names:
+          type: array
+          items:
+            type: string
+      additionalProperties: true
+    LogsQueryRequest:
+      type: object
+      properties:
+        sql:
+          type: string
+        query:
+          type: string
+        iso_timestamp_start:
+          type: string
+        iso_timestamp_end:
+          type: string
+      additionalProperties: true
