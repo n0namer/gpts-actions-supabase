@@ -396,8 +396,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/SecretsDeleteRequest'
   /v1/projects/{ref}/api-keys:
     get:
       operationId: listSupabaseApiKeys
