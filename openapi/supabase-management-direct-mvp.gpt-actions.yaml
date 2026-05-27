@@ -68,6 +68,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
     post:
       operationId: createSupabaseProject
