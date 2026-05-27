@@ -258,8 +258,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/MigrationRequest'
   /v1/projects/{ref}/database/migrations/{version}:
     get:
       operationId: getSupabaseDatabaseMigration
