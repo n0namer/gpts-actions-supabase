@@ -516,8 +516,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/LogsQueryRequest'
 components:
   securitySchemes:
     supabaseBearerAuth:
