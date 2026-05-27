@@ -1,1 +1,534 @@
-{"openapi":"3.0.3","info":{"title":"Supabase Management Direct MVP for GPT Actions","version":"2026-05-27","description":"Import-safe direct GPT Actions schema for Supabase Management API. 18 paths, 30 operations, no adapter."},"servers":[{"url":"https://api.supabase.com"}],"security":[{"supabaseBearerAuth":[]}],"paths":{"/v1/profile":{"get":{"operationId":"getSupabaseProfile","summary":"getSupabaseProfile","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}}}},"/v1/organizations":{"get":{"operationId":"listSupabaseOrganizations","summary":"listSupabaseOrganizations","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}}}},"/v1/organizations/{slug}/projects":{"get":{"operationId":"listSupabaseOrganizationProjects","summary":"listSupabaseOrganizationProjects","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"slug","in":"path","required":true,"schema":{"type":"string"}}]}},"/v1/projects":{"get":{"operationId":"listSupabaseProjects","summary":"listSupabaseProjects","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}}},"post":{"operationId":"createSupabaseProject","summary":"createSupabaseProject","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/available-regions":{"get":{"operationId":"listSupabaseAvailableRegions","summary":"listSupabaseAvailableRegions","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}}}},"/v1/projects/{ref}":{"get":{"operationId":"getSupabaseProject","summary":"getSupabaseProject","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"patch":{"operationId":"updateSupabaseProject","summary":"updateSupabaseProject","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}},"delete":{"operationId":"deleteSupabaseProject","summary":"deleteSupabaseProject","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]}},"/v1/projects/{ref}/health":{"get":{"operationId":"getSupabaseProjectHealth","summary":"getSupabaseProjectHealth","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]}},"/v1/projects/{ref}/pause":{"post":{"operationId":"pauseSupabaseProject","summary":"pauseSupabaseProject","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]}},"/v1/projects/{ref}/restore":{"post":{"operationId":"restoreSupabaseProject","summary":"restoreSupabaseProject","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/database/query/read-only":{"post":{"operationId":"runSupabaseReadOnlySqlQuery","summary":"runSupabaseReadOnlySqlQuery","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/database/query":{"post":{"operationId":"runSupabaseSqlQuery","summary":"runSupabaseSqlQuery","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/database/migrations":{"get":{"operationId":"listSupabaseDatabaseMigrations","summary":"listSupabaseDatabaseMigrations","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"post":{"operationId":"applySupabaseDatabaseMigration","summary":"applySupabaseDatabaseMigration","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/database/migrations/{version}":{"get":{"operationId":"getSupabaseDatabaseMigration","summary":"getSupabaseDatabaseMigration","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}},{"name":"version","in":"path","required":true,"schema":{"type":"string"}}]},"put":{"operationId":"upsertSupabaseDatabaseMigration","summary":"upsertSupabaseDatabaseMigration","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}},{"name":"version","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}},"patch":{"operationId":"patchSupabaseDatabaseMigration","summary":"patchSupabaseDatabaseMigration","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}},{"name":"version","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}},"delete":{"operationId":"rollbackSupabaseDatabaseMigration","summary":"rollbackSupabaseDatabaseMigration","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}},{"name":"version","in":"path","required":true,"schema":{"type":"string"}}]}},"/v1/projects/{ref}/secrets":{"get":{"operationId":"listSupabaseSecrets","summary":"listSupabaseSecrets","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"post":{"operationId":"upsertSupabaseSecrets","summary":"upsertSupabaseSecrets","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}},"delete":{"operationId":"deleteSupabaseSecrets","summary":"deleteSupabaseSecrets","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}},"/v1/projects/{ref}/api-keys":{"get":{"operationId":"listSupabaseApiKeys","summary":"listSupabaseApiKeys","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"post":{"operationId":"createSupabaseApiKey","summary":"createSupabaseApiKey","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/config/auth":{"get":{"operationId":"getSupabaseAuthConfig","summary":"getSupabaseAuthConfig","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"patch":{"operationId":"updateSupabaseAuthConfig","summary":"updateSupabaseAuthConfig","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/config/storage":{"get":{"operationId":"getSupabaseStorageConfig","summary":"getSupabaseStorageConfig","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}]},"patch":{"operationId":"updateSupabaseStorageConfig","summary":"updateSupabaseStorageConfig","x-openai-isConsequential":true,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}},"/v1/projects/{ref}/logs":{"post":{"operationId":"querySupabaseProjectLogs","summary":"querySupabaseProjectLogs","x-openai-isConsequential":false,"responses":{"200":{"description":"OK"}},"parameters":[{"name":"ref","in":"path","required":true,"schema":{"type":"string"}}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true}}}}}}},"components":{"securitySchemes":{"supabaseBearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"SUPABASE_PAT_OR_OAUTH_ACCESS_TOKEN"}}}}
+openapi: 3.0.3
+info:
+  title: Supabase Management Direct MVP for GPT Actions
+  version: '2026-05-27'
+  description: Fast import-safe GPT Actions schema for the official Supabase Management API. Exactly 30 operations. Direct calls to https://api.supabase.com. No adapter.servers:
+- url: https://api.supabase.com
+security:
+- supabaseBearerAuth: []
+paths:
+  /v1/profile:
+    get:
+      operationId: getSupabaseProfile
+      summary: Get authenticated Supabase profile
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/organizations:
+    get:
+      operationId: listSupabaseOrganizations
+      summary: List organizations
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /v1/organizations/{slug}/projects:
+    get:
+      operationId: listSupabaseOrganizationProjects
+      summary: List projects for organization
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/projects:
+    get:
+      operationId: listSupabaseProjects
+      summary: List projects
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+    post:
+      operationId: createSupabaseProject
+      summary: Create project
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/available-regions:
+    get:
+      operationId: listSupabaseAvailableRegions
+      summary: List available regions
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+  /v1/projects/{ref}:
+    get:
+      operationId: getSupabaseProject
+      summary: Get project
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in : path
+        required: true
+        schema:
+          type: string
+    patch:
+      operationId: updateSupabaseProject
+      summary: Update project
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      operationId: deleteSupabaseProject
+      summary: Delete project
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/projects/{ref}/health:
+    get:
+      operationId: getSupabaseProjectHealth
+      summary: Get project health
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/projects/{ref}/pause:
+    post:
+      operationId: pauseSupabaseProject
+      summary: Pause project
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/projects/{ref}/restore:
+    post:
+      operationId: restoreSupabaseProject
+      summary: Restore project
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in : path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/database/query/read-only:
+    post:
+      operationId: runSupabaseReadOnlySqlQuery
+      summary: Run read-only SQL query
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/database/query:
+    post:
+      operationId: runSupabaseSqlQuery
+      summary: Run SQL query
+      x-openai-isConsequential: true
+      description: Potentially destructive. Use read-only SQL first and require confirmation.
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/database/migrations:
+    get:
+      operationId: listSupabaseDatabaseMigrations
+      summary: List database migrations
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: applySupabaseDatabaseMigration
+      summary: Apply database migration
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type": object
+              additionalProperties: true
+  /v1/projects/{ref}/database/migrations/{version}:
+    get:
+      operationId: getSupabaseDatabaseMigration
+      summary: Get database migration
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: upsertSupabaseDatabaseMigration
+      summary: Upsert database migration
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in : path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in : path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    patch:
+      operationId: patchSupabaseDatabaseMigration
+      summary: Patch database migration
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in : path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      operationId: rollbackSupabaseDatabaseMigration
+      summary: Rollback database migration
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type": string
+  /v1/projects/{ref}/secrets:
+    get:
+      operationId: listSupabaseSecrets
+      summary: List secrets metadata
+      description: Do not expose secret values.
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: upsertSupabaseSecrets
+      summary: Upsert Supabase secrets
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+    delete:
+      operationId: deleteSupabaseSecrets
+      summary: Delete Supabase secrets
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/api-keys:
+    get:
+      operationId: listSupabaseApiKeys
+      summary: List Supabase API keys
+      description: Do not expose API key values.
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type": string
+    post:
+      operationId: createSupabaseApiKey
+      summary: Create Supabase API key
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/config/auth:
+    get:
+      operationId: getSupabaseAuthConfig
+      summary: Get Supabase Auth config
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      operationId: updateSupabaseAuthConfig
+      summary: Update Supabase Auth config
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in : path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/config/storage:
+    get:
+      operationId: getSupabaseStorageConfig
+      summary: Get Supabase Storage config
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      operationId: updateSupabaseStorageConfig
+      summary: Update Supabase Storage config
+      x-openai-isConsequential: true
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in : path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /v1/projects/{ref}/logs:
+    post:
+      operationId: querySupabaseProjectLogs
+      summary: Query Supabase project logs
+      x-openai-isConsequential: false
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: ref
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+components:
+  securitySchemes:
+    supabaseBearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: SUPABASE_PAT_OR_OAUTH_ACCESS_TOKEN
