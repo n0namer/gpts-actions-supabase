@@ -123,8 +123,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/GenericRequest'
     delete:
       operationId: deleteSupabaseProject
       summary: Delete project
