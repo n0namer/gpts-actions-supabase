@@ -48,6 +48,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
       parameters:
       - name: slug
