@@ -2,7 +2,8 @@ openapi: 3.0.3
 info:
   title: Supabase Management Direct MVP for GPT Actions
   version: '2026-05-27'
-  description: Fast import-safe GPT Actions schema for the official Supabase Management API. Exactly 30 operations. Direct calls to https://api.supabase.com. No adapter.servers:
+  description: Fast import-safe GPT Actions schema for the official Supabase Management API. Exactly 30 operations. Direct calls to https://api.supabase.com. No adapter.
+servers:
 - url: https://api.supabase.com
 security:
 - supabaseBearerAuth: []
