@@ -259,7 +259,7 @@ paths:
         content:
           application/json:
             schema:
-              type": object
+              type: object
               additionalProperties: true
   /v1/projects/{ref}/database/migrations/{version}:
     get:
