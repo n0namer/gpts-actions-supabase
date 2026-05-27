@@ -377,8 +377,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/SecretsUpsertRequest'
     delete:
       operationId: deleteSupabaseSecrets
       summary: Delete Supabase secrets
