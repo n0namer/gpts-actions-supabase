@@ -430,8 +430,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/GenericRequest'
   /v1/projects/{ref}/config/auth:
     get:
       operationId: getSupabaseAuthConfig
