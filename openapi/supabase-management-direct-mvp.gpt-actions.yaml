@@ -20,6 +20,7 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
                 additionalProperties: true
   /v1/organizations:
     get:
