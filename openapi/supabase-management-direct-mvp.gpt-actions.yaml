@@ -325,8 +325,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              additionalProperties: true
+              $ref: '#/components/schemas/MigrationRequest'
     delete:
       operationId: rollbackSupabaseDatabaseMigration
       summary: Rollback database migration
