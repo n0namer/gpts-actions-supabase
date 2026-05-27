@@ -417,7 +417,7 @@ paths:
         in: path
         required: true
         schema:
-          type": string
+          type: string
     post:
       operationId: createSupabaseApiKey
       summary: Create Supabase API key
